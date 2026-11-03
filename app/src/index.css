@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* =============================================================
+   Fresh Breaks — design tokens v0.1 · Direction E
+   Source: design-handoff/tokens.css
+   ============================================================= */
+:root {
+  /* --- Ground -------------------------------------------------- */
+  --fb-white:        #FFFFFF;
+  --fb-tint:         #F4F2EC;
+  --fb-card:         #FAFAF7;
+
+  /* --- Ink ----------------------------------------------------- */
+  --fb-ocean:        #040F32;
+  --fb-text-1:       #040F32;
+  --fb-text-2:       #3A4668;
+  --fb-text-3:       #7A8299;
+  --fb-text-4:       #A0A5B7;
+
+  --fb-rule:         rgba(4, 15, 50, 0.08);
+  --fb-rule-strong:  rgba(4, 15, 50, 0.14);
+
+  --fb-cream:        #FFFDF7;
+
+  /* --- Category palette (Direction E — shipped) --------------- */
+  --fb-calm:         #6AB8A2;
+  --fb-calm-deep:    #4C9B85;
+  --fb-calm-soft:    #D6EBE3;
+  --fb-calm-mid:     #BFDED1;
+
+  --fb-reflection:   #3D3FCE;
+  --fb-reflection-soft: #DCDDF6;
+
+  --fb-sound:        #8B5CF6;
+  --fb-sound-soft:   #E5DEFD;
+
+  --fb-nature:       #10B981;
+  --fb-nature-soft:  #CFEFE0;
+
+  --fb-sunglow:      #FFCC00;
+  --fb-sunglow-soft: #FFF1B8;
+
+  --fb-sunset:       #E65F4B;
+  --fb-sunset-soft:  #FBDFD8;
+
+  /* --- Type ---------------------------------------------------- */
+  --fb-font-body:    'Outfit', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+  --fb-size-hero:    36px;
+  --fb-size-h1:      32px;
+  --fb-size-h2:      22px;
+  --fb-size-h3:      17px;
+  --fb-size-body:    14px;
+  --fb-size-body-s:  13px;
+  --fb-size-meta:    12px;
+  --fb-size-micro:   11px;
+  --fb-size-eyebrow: 10.5px;
+  --fb-size-breath:  100px;
+
+  --fb-track-tight:   -0.035em;
+  --fb-track-snug:    -0.015em;
+  --fb-track-body:    -0.005em;
+  --fb-track-eyebrow:  0.22em;
+  --fb-track-label:    0.04em;
+
+  --fb-weight-body:    400;
+  --fb-weight-medium:  500;
+  --fb-weight-bold:    700;
+  --fb-weight-display: 800;
+
+  /* --- Radii --------------------------------------------------- */
+  --fb-r-xs:    10px;
+  --fb-r-s:     14px;
+  --fb-r-m:     16px;
+  --fb-r-l:     18px;
+  --fb-r-phone: 44px;
+  --fb-r-pill:  99px;
+
+  /* --- Spacing ------------------------------------------------- */
+  --fb-pad-screen-x: 22px;
+  --fb-pad-screen-t: 18px;
+  --fb-pad-screen-b: 90px;
+
+  --fb-s-1: 4px;
+  --fb-s-2: 8px;
+  --fb-s-3: 10px;
+  --fb-s-4: 14px;
+  --fb-s-5: 18px;
+  --fb-s-6: 22px;
+  --fb-s-7: 28px;
+  --fb-s-8: 40px;
+
+  /* --- Shadows ------------------------------------------------- */
+  --fb-shadow-card:    0 1px 0 rgba(4, 15, 50, 0.06);
+  --fb-shadow-cta:     0 14px 24px -8px rgba(4, 15, 50, 0.4);
+  --fb-shadow-sunglow: 0 0 0 1px rgba(255, 204, 0, 0.53),
+                       0 16px 36px -12px rgba(255, 204, 0, 0.67);
+
+  /* --- Motion -------------------------------------------------- */
+  --fb-dur-quick:   180ms;
+  --fb-dur-normal:  240ms;
+  --fb-dur-settle:  420ms;
+  --fb-dur-breath-slow: 4s;
+  --fb-dur-breath-med:  5s;
+  --fb-dur-breath-fast: 2s;
+
+  --fb-ease-settle: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --fb-ease-breath: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  /* --- Semantic aliases --------------------------------------- */
+  --fb-bg:           var(--fb-white);
+  --fb-surface:      var(--fb-white);
+  --fb-surface-alt:  var(--fb-tint);
+  --fb-primary:      var(--fb-ocean);
+  --fb-on-primary:   var(--fb-cream);
+  --fb-accent:       var(--fb-sunglow);
+  --fb-text:         var(--fb-text-1);
+  --fb-text-soft:    var(--fb-text-2);
+  --fb-text-faint:   var(--fb-text-3);
+}
+
+/* Alt palette — Direction G (documented swap, not shipped) */
+.fb-palette-g {
+  --fb-reflection:      #8B6BB1;
+  --fb-reflection-soft: #E9DFF0;
+
+  --fb-sound:           #FF3D8A;
+  --fb-sound-soft:      #FDDDE9;
+
+  --fb-nature:          #D69327;
+  --fb-nature-soft:     #F6E4C2;
+}
+
+/* =============================================================
+   Base styles
+   ============================================================= */
+body {
+  font-family: var(--fb-font-body);
+  background-color: var(--fb-white);
+  color: var(--fb-text-1);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Typography utility for the app root */
+.fb-app {
+  font-family: var(--fb-font-body);
+  color: var(--fb-text);
+  background: var(--fb-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* =============================================================
+   Animations
+   ============================================================= */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.4s ease forwards;
+}
+
+.animate-fade-in-d1 {
+  animation: fade-in-up 0.4s ease 0.05s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-d2 {
+  animation: fade-in-up 0.4s ease 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-d3 {
+  animation: fade-in-up 0.4s ease 0.15s forwards;
+  opacity: 0;
+}
+
+@keyframes breathe-idle {
+  0%, 100% {
+    transform: scale(0.97);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+}
+
+.animate-breathe-idle {
+  animation: breathe-idle 4s ease-in-out infinite;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+/* =============================================================
+   Accessibility
+   ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-fade-in-d1,
+  .animate-fade-in-d2,
+  .animate-fade-in-d3,
+  .animate-breathe-idle,
+  .animate-scale-in {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .breathing-circle {
+    transition-duration: 0s !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--fb-calm);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
