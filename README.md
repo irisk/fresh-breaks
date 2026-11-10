@@ -2,7 +2,7 @@
 
 **A one-minute break that doesn't try to keep you.**
 
-Most wellness apps measure success in time spent in the app. Fresh Breaks does the opposite: you open it, breathe or reflect for a moment, and close it again. Every break takes under a minute.
+Most well-being apps measure success in time spent in the app. Fresh Breaks does the opposite: you open it, breathe or reflect for a moment, and close it again. Every break takes under a minute.
 
 [Try it: fresh-breaks.vercel.app](https://fresh-breaks.vercel.app)
 
@@ -10,9 +10,7 @@ Most wellness apps measure success in time spent in the app. Fresh Breaks does t
 
 ## Why I built it
 
-I'm a trained digital well-being coach. Many wellness apps run on the same engagement mechanics as the apps they're meant to give you a break from. I wanted to see what a wellness app looks like when its job is to send you back to your day.
-
-It's for the wellness-curious skeptic: someone who knows they should take breaks, but finds meditation apps too heavy, too spiritual or too long.
+I'm a trained digital well-being coach. I tried blocking apps, putting my phone away. But sometimes, you just want a brief distraction. So I thought, can I build an app that supports that: a healthy, brief break?
 
 ## Design decisions
 
